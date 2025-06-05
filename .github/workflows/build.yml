@@ -21,7 +21,6 @@ jobs:
         7z x skia.zip
         cmake -S . -B build -G Ninja \
         -DCMAKE_BUILD_TYPE=Release \
-        -DENABLE_UI=on \
           -DENABLE_CCACHE=$enable_ccache \
           -DLAF_BACKEND=skia \
           -DSKIA_DIR=./skia \
