@@ -22,8 +22,8 @@ jobs:
           -DCMAKE_BUILD_TYPE=Release \
           -DLAF_BACKEND=skia \
           -DSKIA_DIR=C:/skia \
-          -DSKIA_LIBRARY_DIR= C:/skia/out/Release-x64 \
-          -DSKIA_LIBRARY= C:/skia/out/Release-x64/skia.lib \
+          -DSKIA_LIBRARY_DIR=C:/skia/out/Release-x64 \
+          -DSKIA_LIBRARY=C:/skia/out/Release-x64/skia.lib \
     - name: Compiling
       shell: bash
       run: |
