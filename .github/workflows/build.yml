@@ -25,9 +25,8 @@ jobs:
           -DSKIA_LIBRARY_DIR=C:/skia/out/Release-x64 \
           -DSKIA_LIBRARY=C:/skia/out/Release-x64/skia.lib \
     - name: Compiling
-      shell: bash
-      run: |
-        cd build && ninja
+      shell: pwsh
+      run: ninja -C build
     - uses: actions/upload-artifact@v4.6.2
       with:
         name: aseprite
