@@ -64,6 +64,7 @@ enable_testing()
 # Options (these can be specified in cmake command line or modifying
 # CMakeCache.txt)
 
+option(ENABLE_UI    "enable the ui" on)
 option(USE_SHARED_CMARK   "Use your installed copy of cmark" off)
 option(USE_SHARED_CURL    "Use your installed copy of curl" off)
 option(USE_SHARED_GIFLIB  "Use your installed copy of giflib" off)
@@ -96,6 +97,10 @@ option(ENABLE_PSD          "Enable experimental support for .psd files" off)
 option(ENABLE_DESKTOP_INTEGRATION  "Enable desktop integration modules" off)
 option(ENABLE_QT_THUMBNAILER       "Enable kde5/qt5 thumnailer" off)
 set(CUSTOM_WEBSITE_URL "" CACHE STRING "Enable custom local webserver to check updates")
+
+if(ENABLE_UI)
+  add_subdirectory(ui)
+endif()
 
 if(ENABLE_SENTRY)
   set(SENTRY_DIR "" CACHE STRING "Sentry native location")
