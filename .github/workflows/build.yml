@@ -2,9 +2,17 @@ name: build
 on: [push, pull_request]
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
+      matrix:
+        os: [self-hosted]
+        build_type: [Release]
+        enable_ui: [on]
+        include:
+          - os: windows-latest
+            build_type: Release
+            enable_ui: on
     steps:
     - uses: actions/checkout@v3
       with:
