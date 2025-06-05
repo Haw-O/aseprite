@@ -27,7 +27,8 @@ jobs:
     - name: Compiling
       shell: bash
       run: |
-        cd build && ninja
+        cd build
+        VERBOSE=1 ninja
     - uses: actions/upload-artifact@v4.6.2
       with:
         name: aseprite
